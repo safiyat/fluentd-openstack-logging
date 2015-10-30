@@ -1,9 +1,0 @@
-2015-09-25 12:08:17.738 INFO cinder.api.openstack.wsgi [req-6267924d-3568-4000-bd14-27dc4c289256 b45ff26662d943e08c03b1b4697c2983 c311d62ba7754a8fb8014b5dadf12ee3] GET http://10.0.2.15:8776/v2/c311d62ba7754a8fb8014b5dadf12ee3/extensions
-2015-09-25 12:08:17.742 DEBUG cinder.api.openstack.wsgi [req-6267924d-3568-4000-bd14-27dc4c289256 b45ff26662d943e08c03b1b4697c2983 c311d62ba7754a8fb8014b5dadf12ee3] Empty body provided in request from (pid=19268) get_body /opt/stack/cinder/cinder/api/openstack/wsgi.py:862
-2015-09-25 12:08:17.745 INFO cinder.api.openstack.wsgi [req-6267924d-3568-4000-bd14-27dc4c289256 b45ff26662d943e08c03b1b4697c2983 c311d62ba7754a8fb8014b5dadf12ee3] http://10.0.2.15:8776/v2/c311d62ba7754a8fb8014b5dadf12ee3/extensions returned with HTTP 200
-2015-09-25 12:08:17.758 INFO eventlet.wsgi.server [req-6267924d-3568-4000-bd14-27dc4c289256 b45ff26662d943e08c03b1b4697c2983 c311d62ba7754a8fb8014b5dadf12ee3] 10.0.2.15 - - [25/Sep/2015 12:08:17] "GET /v2/c311d62ba7754a8fb8014b5dadf12ee3/extensions HTTP/1.1" 200 8532 0.595413
-2015-09-25 12:08:17.957 DEBUG eventlet.wsgi.server [-] (19268) accepted ('10.0.2.15', 57438) from (pid=19268) server /usr/local/lib/python2.7/dist-packages/eventlet/wsgi.py:826
-2015-09-25 12:08:17.959 INFO cinder.api.openstack.wsgi [-] GET http://10.0.2.15:8776/
-2015-09-25 12:08:17.960 DEBUG cinder.api.openstack.wsgi [-] Empty body provided in request from (pid=19268) get_body /opt/stack/cinder/cinder/api/openstack/wsgi.py:862
-2015-09-25 12:08:17.960 INFO cinder.api.openstack.wsgi [-] http://10.0.2.15:8776/ returned with HTTP 200
-2015-09-25 12:08:17.960 INFO eventlet.wsgi.server [-] 10.0.2.15 - - [25/Sep/2015 12:08:17] "GET / HTTP/1.1" 200 399 0.002150
