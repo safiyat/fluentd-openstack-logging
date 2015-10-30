@@ -35,11 +35,18 @@ fi
 echo -e $INPUT_FILENAME "\t" $OUTPUT_FILENAME "\t" $3
 
 IFS=$'\n'
+COUNT=0
+echo -n "Logs pushed: "
 for line in `cat $INPUT_FILENAME`
 do
-	#Anything here.
+        # echo $line | sudo tee -a $OUTPUT_FILENAME > /dev/null
         echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee -a $OUTPUT_FILENAME > /dev/null
+        COUNT=`echo $COUNT+1|bc`
+        printf "\033[s"
+        echo -n "$COUNT"
 	waitForQ $3
+        printf "\033[u"
+        printf "\033[J"
 done
-
+echo
 IFS=$IFS_BAK
