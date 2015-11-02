@@ -39,8 +39,12 @@ COUNT=0
 echo -n "Logs pushed: "
 for line in `cat $INPUT_FILENAME`
 do
-        echo $line | sudo tee -a $OUTPUT_FILENAME > /dev/null
-        # echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee -a $OUTPUT_FILENAME > /dev/null
+        if [ -z $4 ]
+        then
+            echo $line | sudo tee -a $OUTPUT_FILENAME > /dev/null
+        else
+            echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee -a $OUTPUT_FILENAME > /dev/null
+        fi
         COUNT=`echo $COUNT+1|bc`
         printf "\033[s"
         echo -n "$COUNT"
