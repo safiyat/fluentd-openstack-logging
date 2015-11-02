@@ -37,6 +37,8 @@ echo -e $INPUT_FILENAME "\t" $OUTPUT_FILENAME "\t" $3
 IFS=$'\n'
 COUNT=0
 echo -n "Logs pushed: "
+printf "\033[s"
+
 for line in `cat $INPUT_FILENAME`
 do
         if [ -z $4 ]
@@ -46,7 +48,6 @@ do
             echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee -a $OUTPUT_FILENAME > /dev/null
         fi
         COUNT=`echo $COUNT+1|bc`
-        printf "\033[s"
         echo -n "$COUNT"
 	waitForQ $3
         printf "\033[u"
