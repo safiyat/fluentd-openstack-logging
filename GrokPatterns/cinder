@@ -1,2 +1,4 @@
 # ANSI Color Codes
 ANSICOLOR (\[0[0-2](;[0-9]{2})?m)?
+
+CINDERAPI (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
