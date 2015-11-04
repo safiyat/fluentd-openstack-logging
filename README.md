@@ -1,5 +1,5 @@
 ## ISSUES
-- Fluentd flushes to elasticsearch with an impatient delay.
+- ~~Fluentd flushes to elasticsearch with an impatient delay.~~
 
 ## To be done
 - Categorize the logs in their various indices.
