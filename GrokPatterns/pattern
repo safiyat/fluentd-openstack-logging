@@ -45,3 +45,5 @@ NEUTRONMETA (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:logl
 NEUTRONSVC (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
 
 SWIFTACCOUNT (?:%{NOTSPACE}%{SPACE}%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) ("(?:%{WORD} %{NOTSPACE:referrer})" )?"(?:%{NOTSPACE:transactionid})" "(?:%{DATA:user-agent})" (?:%{NUMBER:requesttime}) "(?:%{NOTSPACE:additionalinfo})" %{NUMBER:serverpid} %{DATA:policyindex}(%{GREEDYDATA})?)
+
+SWIFTCONTAINER (?:%{NOTSPACE}%{SPACE}%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) ("(?:%{WORD} %{NOTSPACE:referrer})" )?"(?:%{NOTSPACE:transactionid})" "(?:%{DATA:user-agent})" (?:%{NUMBER:requesttime}) "(?:%{NOTSPACE:additionalinfo})" %{NUMBER:serverpid} %{DATA:policyindex}(%{GREEDYDATA})?)
