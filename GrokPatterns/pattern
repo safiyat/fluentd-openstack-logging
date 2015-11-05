@@ -14,3 +14,5 @@ GLANCEREG (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglev
 HORIZON (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}(%{LOGLEVEL:loglevel}:)?%{USERNAME:warningsource}:%{SPACE}%{GREEDYDATA:message})
 
 KEYSTONEACCESS (?:%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-))
+
+KEYSTONE (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{NUMBER:processid}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
