@@ -43,3 +43,5 @@ NEUTRONL3 (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglev
 NEUTRONMETA (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
 
 NEUTRONSVC (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
+
+SWIFTACCOUNT %{NOTSPACE}%{SPACE}%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request}(?: HTTP/%{NUMBER})?|%{DATA})" %{NUMBER:response} (?:%{NOTSPACE:bytes}|-) "(?:%{WORD} %{NOTSPACE:referrer})" "(?:%{NOTSPACE:transactionid})" "(?:%{DATA:user-agent})" (?:%{NUMBER:requesttime}) "(?:%{NOTSPACE:additionalinfo})" %{NUMBER:serverpid} %{NUMBER:policyindex}
