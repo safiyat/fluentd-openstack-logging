@@ -2,8 +2,8 @@
 - ~~Fluentd flushes to elasticsearch with an impatient delay.~~
 
 ## To be done
-- Categorize the logs in their various indices.
-- Write all the configs and include them in the `collector.conf`
+- ~~Categorize the logs in their various indices.~~
+- ~~Write all the configs and include them in the `collector.conf`~~
 - Set up log rotation.
 
 ## List of interesting plugins
