@@ -6,6 +6,7 @@
 - ~~Write all the configs and include them in the `collector.conf`~~
 - Set up log rotation.
 - Rabbitmq and Mysql log config
+
 ## List of interesting plugins
 
 
