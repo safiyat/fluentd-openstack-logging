@@ -33,14 +33,17 @@ fi
 
 INPUT_FILENAME=$1
 
-if [ -n $2 ]
+if [ -n "$2" ]
 then
+    echo "Here --$2--"
     OUTPUT_FILENAME=$2
 else
-    OUTPUT_FILENAME="-"
+#    OUTPUT_FILENAME="-"
+    echo "There"
+    OUTPUT_FILENAME="/var/log/${INPUT_FILENAME#*var-log/}"
 fi
 
-echo -e $INPUT_FILENAME "\t" $OUTPUT_FILENAME "\t" $3
+echo -e "IP: " $INPUT_FILENAME "\t" "OP: " $OUTPUT_FILENAME "\t" "WAIT: " $3
 
 IFS=$'\n'
 COUNT=0
