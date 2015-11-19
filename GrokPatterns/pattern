@@ -2,6 +2,8 @@
 ANSICOLOR (\[0[0-2](;[0-9]{2})?m)?
 REQUESTS (?:%{USERNAME:requestid}%{ANSICOLOR}(%{SPACE}%{ANSICOLOR}%{USERNAME:userid}%{ANSICOLOR}%{SPACE}%%{ANSICOLOR}{USERNAME:tenantid}){0,2})
 
+ACCESS (?:%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request} %{DATA:ver})" %{NUMBER:response} %{NUMBER:size} "%{DATA:referrer}" "%{DATA:useragent}")
+
 LIBVIRTD  (?:%{TIMESTAMP_ISO8601:timestamp}:%{SPACE}%{NUMBER:pid}:%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}:%{SPACE}((?:%{DATA:event}):%{NUMBER:line_no}%{SPACE}:%{SPACE})?%{GREEDYDATA:message})
 
 OVSAGENT  (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{NUMBER:pid}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
