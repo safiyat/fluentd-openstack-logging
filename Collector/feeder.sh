@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 IFS_BAK=$IFS
 
 function waitForQ
@@ -19,7 +21,13 @@ function waitForQ
 
 if [ $# -lt 1 ]
 then
-    echo "Atleast the source file name required as a parameter."
+    echo "Usage: $0 INPUT_FILENAME OUTPUT_FILENAME wait_time_in_seconds USE_SED"
+    exit
+fi
+
+if [ $1 == "--help" ]
+then
+    echo "Usage: $0 INPUT_FILENAME OUTPUT_FILENAME wait_time_in_seconds USE_SED"
     exit
 fi
 
@@ -45,7 +53,7 @@ do
         then
             echo $line | sudo tee -a $OUTPUT_FILENAME > /dev/null
         else
-            echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee -a $OUTPUT_FILENAME > /dev/null
+            echo $line | sed 's/\x1b\[[0-9;]*m//g' | sudo tee $OUTPUT_FILENAME > /dev/null
         fi
         COUNT=`echo $COUNT+1|bc`
         echo -n "$COUNT"
