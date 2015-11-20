@@ -4,6 +4,8 @@ REQUESTS (?:%{USERNAME:requestid}%{ANSICOLOR}(%{SPACE}%{ANSICOLOR}%{USERNAME:use
 
 ACCESS (?:%{IPORHOST:clientip} %{USER} %{USER} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:method} %{NOTSPACE:request} %{DATA:ver})" %{NUMBER:response} %{NUMBER:size} "%{DATA:referrer}" "%{DATA:useragent}")
 
+AERROR (?:\[(?<timestamp>(%{DAY} %{MONTH} %{MONTHDAY} %{TIME} %{YEAR}))\]%{SPACE}\[(?:%{DATA:component})\:(?:%{DATA:loglevel})\]%{SPACE}\[pid (?:%{DATA:pid})\:tid (?:%{DATA:transactionid})\]%{SPACE}%{GREEDYDATA:message})
+
 LIBVIRTD  (?:%{TIMESTAMP_ISO8601:timestamp}:%{SPACE}%{NUMBER:pid}:%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}:%{SPACE}((?:%{DATA:event}):%{NUMBER:line_no}%{SPACE}:%{SPACE})?%{GREEDYDATA:message})
 
 OVSAGENT  (?:%{TIMESTAMP_ISO8601:timestamp}%{SPACE}%{NUMBER:pid}%{SPACE}%{ANSICOLOR}%{LOGLEVEL:loglevel}%{SPACE}%{NOTSPACE:api}%{SPACE}\[%{ANSICOLOR}(?:%{DATA:request})%{ANSICOLOR}\]%{SPACE}%{ANSICOLOR}%{ANSICOLOR}%{GREEDYDATA:message})
