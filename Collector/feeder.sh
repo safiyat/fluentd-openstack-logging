@@ -35,11 +35,9 @@ INPUT_FILENAME=$1
 
 if [ -n "$2" ]
 then
-    echo "Here --$2--"
     OUTPUT_FILENAME=$2
 else
 #    OUTPUT_FILENAME="-"
-    echo "There"
     OUTPUT_FILENAME="/var/log/${INPUT_FILENAME#*var-log/}"
 fi
 
