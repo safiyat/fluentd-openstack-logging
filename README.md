@@ -4,7 +4,7 @@
 ## To be done
 - ~~Categorize the logs in their various indices.~~
 - ~~Write all the configs and include them in the `collector.conf`~~
-- Set up log rotation.
+- Set up log rotation. Use [curator](https://github.com/elastic/curator)
 - Rabbitmq and Mysql log config
 - Parse the request tokens into request id, user id, and tenant id. Look [here](https://review.openstack.org/cat/114485%2C1%2Ctools/ansible-openstack-log/templates/etc/td-agent/td_agent.conf%5E0).
 - Parse the log file `/var/log/apache2/keystone.log`
