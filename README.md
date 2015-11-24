@@ -8,6 +8,7 @@
 - Rabbitmq and Mysql log config
 - Parse the request tokens into request id, user id, and tenant id. Look [here](https://review.openstack.org/cat/114485%2C1%2Ctools/ansible-openstack-log/templates/etc/td-agent/td_agent.conf%5E0).
 - Parse the log file `/var/log/apache2/keystone.log`
+- **Parse the nova-api.log file properly. Skip the stack trace.**
 
 ## List of interesting plugins
 
