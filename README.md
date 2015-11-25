@@ -10,11 +10,33 @@
 - Parse the log file `/var/log/apache2/keystone.log`
 - ~~**Parse the nova-api.log file properly. Skip the stack trace.**~~
 
-## List of interesting plugins
+## Configuration
+### Aggregator
+- Fluentd
+  - Log level: TRACE
+  - IP: 0.0.0.0 (Default is 0.0.0.0)
+  - Port: 24220 (Default is 24224)
 
+- Elasticsearch
+  - Clustername: sdcloud
+  - IP: 0.0.0.0 (Default is 0.0.0.0)
+  - Port: 9200 (Default is 9200)
+  - Flush interval: 1s
+  - Index name: Second tag part
+  - Type name: Third tag part
 
+### Collector
+- Connet
+  - Forward to
+    - Active: 10.41.0.112:24220
+    - Standby: 10.41.0.111:24220
+    
+- Compute
+  - Forward to
+    - Active: 10.41.0.112:24220
+    - Standby: 10.41.0.111:24220
 
-### Used plugins
+## Used plugins
 - [Elasticsearch Plugin](https://github.com/uken/fluent-plugin-elasticsearch)
 - [Grok Parser](https://github.com/kiyoto/fluent-plugin-grok-parser)
 - [Forest Plugin](https://github.com/tagomoris/fluent-plugin-forest)
