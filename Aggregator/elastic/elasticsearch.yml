@@ -318,12 +318,12 @@ path.logs: /var/log/elasticsearch
 #
 # 1. Disable multicast discovery (enabled by default):
 #
-#discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.multicast.enabled: false
 #
 # 2. Configure an initial list of master nodes in the cluster
 #    to perform discovery when new nodes (master or data) are started:
 #
-#discovery.zen.ping.unicast.hosts: ["host1", "host2:port"]
+discovery.zen.ping.unicast.hosts: ["10.41.0.109", "10.41.0.110", "10.41.0.111", "10.41.0.112"]
 
 # EC2 discovery allows to use AWS EC2 API in order to perform discovery.
 #
