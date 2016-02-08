@@ -15,6 +15,7 @@ This project is a collection of fluentd configuration files for parsing and forw
 - Set up log rotation. Use scroll and bulk API.
 - Ceph, Icinga, RabbitMQ and MySQL log config
 - Parse the request tokens into request id, user id, and tenant id. Look [here](https://review.openstack.org/cat/114485%2C1%2Ctools/ansible-openstack-log/templates/etc/td-agent/td_agent.conf%5E0).
+- Parse **apache2/keystone-error.log** if possible.
 
 ## Configuration
 ### Aggregator
