@@ -1,14 +1,20 @@
+# Fluentd configuration for parsing OpenStack Logs
+
+This project is a collection of fluentd configuration files for parsing and forwarding openstack compute, controller and network node logs to fluentd-forwarder, and finally to Elasticsearch.
+
+## Guidelines
+- No comments. Code should be self-explanatory.
+- `log_level` must always be warn.
+- `format_firstline` must not contain string captures.
+- `timestamp` must conform to this standard: **_YYYY_-_MM_-_DD_T_HH_:_MM_:_SS_+05:30**
+
 ## ISSUES
-- ~~Fluentd flushes to elasticsearch with an impatient delay.~~
+
 
 ## To be done
-- ~~Categorize the logs in their various indices.~~
-- ~~Write all the configs and include them in the `collector.conf`~~
-- Set up log rotation. Use [curator](https://github.com/elastic/curator)
-- Rabbitmq and Mysql log config
+- Set up log rotation. Use scroll and bulk API.
+- Ceph, Icinga, RabbitMQ and MySQL log config
 - Parse the request tokens into request id, user id, and tenant id. Look [here](https://review.openstack.org/cat/114485%2C1%2Ctools/ansible-openstack-log/templates/etc/td-agent/td_agent.conf%5E0).
-- Parse the log file `/var/log/apache2/keystone.log`
-- ~~**Parse the nova-api.log file properly. Skip the stack trace.**~~
 
 ## Configuration
 ### Aggregator
@@ -30,7 +36,7 @@
   - Forward to
     - Active: 10.41.0.112:24220
     - Standby: 10.41.0.111:24220
-    
+
 - Compute
   - Forward to
     - Active: 10.41.0.112:24220
@@ -38,6 +44,6 @@
 
 ## Used plugins
 - [Elasticsearch Plugin](https://github.com/uken/fluent-plugin-elasticsearch)
-- [Grok Parser](https://github.com/kiyoto/fluent-plugin-grok-parser)
+- ~~[Grok Parser](https://github.com/kiyoto/fluent-plugin-grok-parser)~~
 - [Forest Plugin](https://github.com/tagomoris/fluent-plugin-forest)
 - [Retag Plugin](https://github.com/algas/fluent-plugin-retag)
