@@ -4,7 +4,7 @@ This project is a collection of fluentd configuration files for parsing and forw
 
 ## Guidelines
 - No comments. Code should be self-explanatory.
-- `log_level` must always be warn.
+- `log_level` must always be `info`.
 - `format_firstline` must not contain string captures.
 - `timestamp` must conform to this standard: **_YYYY_-_MM_-_DD_T_HH_:_MM_:_SS_+05:30**
 
