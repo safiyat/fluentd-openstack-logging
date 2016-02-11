@@ -2,3 +2,4 @@
 Collector/Compute/var-log/*
 Collector/Connet/var-log/*
 .directory
+logs/
